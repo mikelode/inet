@@ -1,0 +1,153 @@
+.fc-sun {
+  color: #e4606d;
+  font-weight: bold;
+}
+
+.fc-event-time,
+.fc-event-title {
+  padding: 0 1px;
+  white-space: nowrap;
+}
+
+.fc-title {
+  white-space: normal;
+}
+
+.fc-content {
+  color: #000000;
+}
+
+.fc-national-holiday {
+  border: dashed 1px #ff6161;
+  background-color: rgb(227, 180, 182);
+  /*opacity:0.5;*/
+}
+
+.fc-birthday {
+  border: dashed 1px #ffea59;
+  background-color: rgb(255, 250, 157);
+  /*opacity:0.5;*/
+}
+
+#main {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+.table {
+  font-size: 10px;
+}
+
+.slcOwnstyle {
+  font-size: smaller;
+}
+
+.lb-sm {
+  font-size: 10px;
+}
+
+.lb-md {
+  font-size: 14px;
+}
+
+.lb-lg {
+  font-size: 18px;
+}
+
+.edit {
+  content: url("../img/edit24.png");
+}
+
+.canceledit {
+  content: url("../img/cancel24.png");
+}
+
+.add {
+  content: url("../img/add24.png");
+}
+
+.added {
+  content: url("../img/added24.png");
+}
+
+.numeracion {
+}
+
+.menu-opciones {
+  position: fixed;
+  margin-left: 1rem;
+}
+
+.net-box {
+  position: relative;
+  border: solid 0.5px #94c5c5;
+  border-radius: 5px;
+  background-color: rgba(254, 255, 255, 0.92);
+  margin-bottom: 5px;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.net-box-header {
+  display: block;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: inset;
+}
+.net-box-title {
+  font-weight: bold;
+  float: left;
+}
+.net-box-body {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding: 10px;
+}
+
+body {
+  background-image: url("../img/coffee4.png");
+  background-repeat: repeat;
+}
+
+[data-toggle="collapse"] .fa:before {
+  content: "\f139";
+}
+
+[data-toggle="collapse"].collapsed .fa:before {
+  content: "\f13a";
+}
+
+.btn-link {
+  color: #17a2b8;
+}
+
+.box-releases {
+  height: 65vh;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+}
+
+#scroll-style::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#scroll-style::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+#scroll-style::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(
+    top,
+    #17a2b8 0%,
+    #bfe8f9 50%,
+    #9fd8ef 51%,
+    #17a2b8 100%
+  );
+}
