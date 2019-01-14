@@ -18,18 +18,20 @@
                         <div class="net-box-body">
                             <div class="row my-2">
                                 <div class="col-md-6" style="text-align: center;">
-                                    <img src="{{ asset('img/TAREOS.png') }}" alt="">
+									<a href="http://192.168.0.2:8081/slam/public" target="_blank">
+										<img src="{{ asset('img/slamlogo.png') }}" alt="" width='140px' height='120px'>
+									</a>
                                 </div>
                                 <div class="col-md-6" style="text-align: center;">
-                                    <img src="{{ asset('img/TAREOS.png') }}" alt="">
+                                    <img src="{{ asset('img/TAREOS.png') }}" alt="" width='140px' height='120px'>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6" style="text-align: center;">
-                                    <img src="{{ asset('img/correo.png') }}" alt="">
+                                    <img src="{{ asset('img/correo.png') }}" alt="" width='140px' height='120px'>
                                 </div>
                                 <div class="col-md-6" style="text-align: center;">
-                                    <img src="{{ asset('img/correo.png') }}" alt="">
+                                    <img src="{{ asset('img/correo.png') }}" alt="" width='140px' height='120px'>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +60,13 @@
                                     </div>
                                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div class="card-body">
-                                            Contenido A
+											<ul>
+												<li>
+												<a href="{{ asset('docs/solicitud_creacion_usuario_logistica.pdf') }}" target='_blank'>
+													Formato creación usuario logística
+												</a>
+												</li>
+											</ul>
                                         </div>
                                     </div>
                                 </div>
