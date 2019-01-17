@@ -3,13 +3,13 @@
 
 
 <!-- Page Content -->
-<div class="container-fluid">
+<div class="">
     <!-- Portfolio Item Row -->
     <div class="row">
         <div class="col-md-3">
             <div class="row mb-0">
                 <div class="col-md-12">
-                    <div class="net-box mt-2">
+                    <div class="net-box mt-1">
                         <div class="net-box-header" style="text-align: center;">
                             <div class="net-box-title">
                                 PORTAFOLIO DE SISTEMAS
@@ -19,7 +19,7 @@
                             <div class="row my-2">
                                 <div class="col-md-6" style="text-align: center;">
 									<a href="http://192.168.0.2:8081/slam/public" target="_blank">
-										<img src="{{ asset('img/slamlogo.png') }}" alt="" width='140px' height='120px'>
+										<img src="{{ asset('img/logismart.png') }}" alt="" width='140px' height='120px'>
 									</a>
                                 </div>
                                 <div class="col-md-6" style="text-align: center;">
@@ -132,7 +132,7 @@
         </div>
 
         <div class="col-md-5 px-0" id="vuePublicacion">
-            <div class="net-box mt-2">
+            <div class="net-box mt-1">
                 <div class="net-box-header" style="text-align: center;">
                     <div class="net-box-title">
                         COMUNICADOS Y/O PUBLICACIONES
@@ -309,7 +309,7 @@
         </div>
 
         <div class="col-md-4" style="text-align: center;">
-            <div class="net-box mt-2">
+            <div class="net-box mt-1">
                 <div class="net-box-header">
                     <div class="net-box-title">EVENTOS</div>
                 </div>

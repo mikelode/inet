@@ -4,12 +4,15 @@
     @include('partials.htmlheader')
 
 <body>
-    @include('partials.contentheader')
-    <div id="main">
-        @yield('main-content')
+    <div class="container-fluid">
+        @include('partials.contentheader')
+        <div id="main">
+            @yield('main-content')
+        </div>
+        
     </div>
     @include('partials.footer')
-    @include('partials.scripts') @yield('custom-scripts')
+        @include('partials.scripts') @yield('custom-scripts')
 </body>
 
 </html>
