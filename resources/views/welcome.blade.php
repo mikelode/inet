@@ -357,27 +357,27 @@
                         </a>
                     </div>
                     <div>
-                        <a href="http://www.sunat.gob.pe/cl-ti-itmrconsruc/FrameCriterioBusquedaMovil.jsp" target="_blank">
+                        <a href="https://www2.sbs.gob.pe/afiliados/paginas/consulta.aspx" target="_blank">
                             <img src="{{ asset('/img/sbs.png') }}" alt="">
                         </a>
                     </div>
                     <div>
-                        <a href="http://www.sunat.gob.pe/cl-ti-itmrconsruc/FrameCriterioBusquedaMovil.jsp" target="_blank">
+                        <a href="https://ofi5.mef.gob.pe/inviertePub/ConsultaPublica/ConsultaAvanzada" target="_blank">
                             <img src="{{ asset('/img/banco_de_inversiones.jpg') }}" alt="">
                         </a>
                     </div>
                     <div>
-                        <a href="http://www.sunat.gob.pe/cl-ti-itmrconsruc/FrameCriterioBusquedaMovil.jsp" target="_blank">
+                        <a href="https://municipioaldia.com/" target="_blank">
                             <img src="{{ asset('/img/municipio-dia.png') }}" alt="">
                         </a>
                     </div>
                     <div>
-                        <a href="http://www.sunat.gob.pe/cl-ti-itmrconsruc/FrameCriterioBusquedaMovil.jsp" target="_blank">
+                        <a href="http://www.sisfoh.gob.pe/" target="_blank">
                             <img src="{{ asset('/img/sisfoh.png') }}" alt="">
                         </a>
                     </div>
                     <div>
-                        <a href="http://www.sunat.gob.pe/cl-ti-itmrconsruc/FrameCriterioBusquedaMovil.jsp" target="_blank">
+                        <a href="https://www.gob.pe/mtpe" target="_blank">
                             <img src="{{ asset('/img/mintra.png') }}" alt="">
                         </a>
                     </div>
