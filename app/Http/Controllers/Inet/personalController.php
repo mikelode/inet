@@ -5,6 +5,8 @@ namespace App\Http\Controllers\inet;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Exception;
+
 class personalController extends Controller
 {
     /**
@@ -47,7 +49,17 @@ class personalController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+
+            if($id == 'dni'){
+            }
+            else{
+
+            }
+
+        }catch(Exception $e){
+            $msg = $e->getMessage();
+        }
     }
 
     /**

@@ -130,12 +130,14 @@
 
                     if(by == 'dni'){
                         value = this.person.dni;
+                        let url = 'personal/show/dni';
                     }
                     else{
                         value = this.person.name;
+                        let url = 'personal/show/name';
                     }
 
-                    axios.get("{{ url('release') }}")
+                    axios.get(url, {'value': value})
                         .then(response => {
                             this.release = response.data.publicaciones;
                         })
