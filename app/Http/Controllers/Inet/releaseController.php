@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Exception;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Publicacion;
 use App\Models\Comentario;
@@ -72,7 +73,7 @@ class releaseController extends Controller
                 $publicacion->pubDescripcion = $frm->relDesc;
                 $publicacion->pubPathfile = $pathFile;
                 $publicacion->pubFecha = Carbon::now();
-                $publicacion->pubAutor = 1;
+                $publicacion->pubAutor = is_null(Auth::user()->persona) ? Auth::user()->id : Auth::user()->persona->perDni;
                 $publicacion->pubVisible = $frm->relShow;
                 $publicacion->pubTitulo = $frm->relTitle;
 
@@ -154,7 +155,7 @@ class releaseController extends Controller
                     $publicacion->pubPathfile = $pathFile;
                 }
                 $publicacion->pubFecha = Carbon::now();
-                $publicacion->pubAutor = 1;
+                $publicacion->pubAutor = is_null(Auth::user()->persona) ? Auth::user()->id : Auth::user()->persona->perDni;;
                 $publicacion->pubVisible = $frm->pubVisible;
                 $publicacion->pubTitulo = $frm->pubTitulo;
 

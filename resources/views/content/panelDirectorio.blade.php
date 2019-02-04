@@ -10,9 +10,11 @@
 
             <div class="col-md-3">
                 <div class="card">
+                    @auth
                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#mdlAddcontact">
                         Agregar Contacto <img src="{{ asset('/img/user32.png') }}" alt="">
                     </button>
+                    @endauth
                 </div>
                 <div id="accordion">
                     <div class="card">

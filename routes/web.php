@@ -79,4 +79,4 @@ Route::post('comment/{release}/add','inet\releaseController@storeComment');
 
 /* PERSONAL CONTROL DS PLANILLAS */
 Route::get('control', 'inet\personalController@index');
-Route::get('personal/show/{by}','inet\personalController@show');
+Route::get('personal/show/{id}','inet\personalController@show');

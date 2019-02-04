@@ -138,7 +138,9 @@
                         COMUNICADOS Y/O PUBLICACIONES
                     </div>
                     <div class="float-right">
+                        @auth
                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#mdlNuevaPub">Agregar publicación</button>
+                        @endauth
                     </div>
                 </div>
                 <div class="net-box-body box-releases" id="scroll-style">
@@ -146,8 +148,10 @@
                         <div class="card-header py-1">
                             <h6 class="card-title mb-1">
                                 ${ rel.pubTitulo }
+                                @auth
                                 <a href="javascript:void(0)" v-on:click="getRelease(rel.pubId)"><img class="edit" alt=""></a>
                                 <a href="javascript:void(0)" v-on:click="delRelease(rel.pubId)"><img src="{{ asset('/img/delete24.png') }}" alt=""></a>
+                                @endauth
                             </h6>
                             <h7 class="card-subtitle mb-2 text-muted">${ rel.pubFecha }</h7>
                             <div class="float-right" v-show="rel.pubPathfile">
@@ -188,7 +192,7 @@
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">EDITAR SEGMENTO DE AVISOS Y COMUNICADOS</h5>
+                            <h5 class="modal-title">AVISOS Y COMUNICADOS</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -428,6 +432,7 @@
                 axios.post("{{ url('release/store') }}", this.formData, { headers: { 'Content-Type': 'multipart/form-data' } })
                     .then(response => {
                         this.getReleases();
+                        $('#mdlNuevaPub').modal('hide');
                     })
                     .catch(err => {
                         console.log(err);

@@ -67,13 +67,13 @@ return [
             'sslmode' => 'prefer',
         ],
 
-        'sqlsrv' => [
+        'planillas' => [
             'driver' => 'sqlsrv',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('PLA_HOST', 'localhost'),
+            'port' => env('PLA_PORT', '1433'),
+            'database' => env('PLA_DATABASE', 'forge'),
+            'username' => env('PLA_USERNAME', 'forge'),
+            'password' => env('PLA_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
         ],

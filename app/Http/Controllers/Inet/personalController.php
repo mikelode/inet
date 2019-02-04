@@ -4,6 +4,7 @@ namespace App\Http\Controllers\inet;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 use Exception;
 
@@ -50,12 +51,14 @@ class personalController extends Controller
     public function show($id)
     {
         try{
+                $result = DB::connection('planillas')->select('select e.COD_PROYECTO, e.DES_PROYECTO, d.COD_PLANILLA, d.DES_PLANILLA, a.COD_PERSONA, c.NOMBRES, c.AP_PATERNO, c.AP_MATERNO, b.DES_CONCEPTO, a.IMPORTE from PLAN_PERSONA_CONCEPTOS a
+                inner join PLAN_CONCEPTO b on b.COD_CONCEPTO = a.COD_CONCEPTO
+                inner join PLAN_PERSONA c on c.COD_PERSONA = a.COD_PERSONA
+                inner join PLAN_PLANILLA d on d.COD_PLANILLA = a.COD_PLANILLA
+                inner join PLAN_PROYECTO e on e.COD_PROYECTO = d.COD_PROYECTO
+                where a.COD_CONCEPTO IN ("TINGRESO","TDESCUENTO","TLIQUIDO") AND COD_PERSONA = ?',[$id]);
 
-            if($id == 'dni'){
-            }
-            else{
-
-            }
+                dd($result);
 
         }catch(Exception $e){
             $msg = $e->getMessage();

@@ -28,4 +28,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function persona()
+    {
+        return $this->hasOne('App\Models\Persona','perId','person');
+    }
 }
