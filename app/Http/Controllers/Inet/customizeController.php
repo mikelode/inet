@@ -8,6 +8,7 @@ use App\Models\Obra;
 use App\Models\Persona;
 use App\Models\Tipoevento;
 use App\Models\Ubigeo;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -423,5 +424,79 @@ class customizeController extends Controller
 
         return response()->json(compact('msg','msgId','url'));
 
+    }
+
+    public function indexUsuario(Request $request)
+    {
+        $usuarios = User::with('persona')->get();
+        $view = view('content.custom_usuarios',compact('usuarios'));
+        return $view;
+    }
+
+    public function storeUsuario(Request $request)
+    {
+        try{
+            $exception = DB::transaction(function () use($request){
+                
+                $person = Persona::where('perDni', $request->ntxtDni)->first();
+
+                if(is_null($person)){
+
+                    $usrPerson = new Persona();
+                    $usrPerson->perDni = $request->ntxtDni;
+                    $usrPerson->perNombre = $request->ntxtName;
+                    $usrPerson->perPaterno = $request->ntxtPaterno;
+                    $usrPerson->perMaterno = $request->ntxtMaterno;
+                    $usrPerson->perFullname = $request->ntxtName . ' ' . $request->ntxtPaterno . ' ' . $request->ntxtMaterno;
+                    $usrPerson->save();
+                }
+                else{
+                    $usrPerson = Persona::find($person->perId);
+                }
+
+                $user = new User();
+                $user->name = $request->ntxtUsrname;
+                $user->email = $request->ntxtUsrmail;
+                $user->password = encrypt($request->ntxtDni);
+                $user->created_at = Carbon::now();
+                $user->person = $usrPerson->perId;
+                $user->save();
+
+            });
+
+            if(is_null($exception)){
+                $msg = 'Usuario registrado correctamente';
+                $msgId = 200;
+                $url = url('custom/usuarios');
+            }
+            else{
+                throw new Exception($exception);
+            }
+
+        }catch(Exception $e){
+            $msg = "Error: " . $e->getMessage();
+            $msgId = 500;
+            $url = '';
+        }
+
+        return response()->json(compact('msg','msgId','url'));
+    }
+
+    public function updateUsuario(Request $request)
+    {
+        $usuario = User::find($request->pk);
+
+        switch ($request->name){
+            case 'username':
+                $usuario->name = $request->value;
+                break;
+            case 'useremail':
+                $usuario->email = $request->value;
+                break;
+        }
+
+        $usuario->save();
+
+        return 'Campo actualizado correctamente';
     }
 }

@@ -18,6 +18,8 @@ Route::get('directorio','inet\directoryController@index');
 Route::post('directorio/contacto','inet\directoryController@store');
 Route::post('directorio/encontrar','inet\directoryController@filter');
 
+Route::post('usuario/store','inet\customizeController@storeUsuario');
+Route::post('usuario/update','inet\customizeController@updateUsuario');
 
 Route::post('persona/store','inet\customizeController@storePersona');
 Route::post('persona/update','inet\customizeController@updatePersona');
@@ -48,6 +50,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('custom/personas','inet\customizeController@indexPersona');
     Route::get('custom/entidades','inet\customizeController@indexEntidad');
     Route::get('custom/obras','inet\customizeController@indexObra');
+    Route::get('custom/usuarios','inet\customizeController@indexUsuario');
 
     Route::group(['middleware' =>  'can:create-events,\App\Models\Evento'], function(){
 

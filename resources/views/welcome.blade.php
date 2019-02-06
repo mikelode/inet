@@ -131,7 +131,7 @@
             </div>
         </div>
 
-        <div class="col-md-5 px-0" id="vuePublicacion">
+        <div class="col-md-6 px-0" id="vuePublicacion">
             <div class="net-box mt-1">
                 <div class="net-box-header" style="text-align: center;">
                     <div class="net-box-title">
@@ -312,7 +312,7 @@
 
         </div>
 
-        <div class="col-md-4" style="text-align: center;">
+        <div class="col-md-3" style="text-align: center;">
             <div class="net-box mt-1">
                 <div class="net-box-header">
                     <div class="net-box-title">EVENTOS</div>

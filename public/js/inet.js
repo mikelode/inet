@@ -7,6 +7,19 @@ function fnGotoUrl(url)
     window.location = url;
 }
 
+function fnStoreUsuario(frm)
+{
+    var url = frm.attr('action');
+    var data = frm.serialize();
+
+    $.post(url, data, function(response){
+        alert(response.msg);
+        if(response.msgId == 200){
+            window.location = response.url;
+        }
+    });
+}
+
 function fnStorePersona(frm)
 {
     var url = frm.attr('action');

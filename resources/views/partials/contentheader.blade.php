@@ -54,6 +54,7 @@
                         @can('custom-evento')
                         <a href="{{ url('custom/eventos') }}" class="dropdown-item">Eventos</a>
                         @endcan
+                        <a href="{{ url('custom/usuarios') }}" class="dropdown-item">Usuarios</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
