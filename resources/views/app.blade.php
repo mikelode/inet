@@ -4,8 +4,9 @@
     @include('partials.htmlheader')
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="min-height: calc(100vh - 35px);">
         @include('partials.contentheader')
+        @yield('main-banner')
         <div id="main">
             @yield('main-content')
         </div>

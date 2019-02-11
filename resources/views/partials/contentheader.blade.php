@@ -79,8 +79,3 @@
         </div>
     </div>
 </nav>
-<div class="wide">
-    <div class="col-xs-5 line"><hr></div>
-    <div class="col-xs-2 logo">-</div>
-    <div class="col-xs-5 line"><hr></div>
-</div>

@@ -3,44 +3,65 @@
 
     <!-- Page Content -->
     <div class="container-fluid">
-
-        <!-- Portfolio Item Row -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <h5 class="card-header">
-                        REPORTE LABORAL DE PERSONAS
-                    </h5>
-                </div>
+        <div class="card">
+            <div class="card-header">
+                <h5>REPORTE LABORAL DE PERSONAS</h5>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card border-dark p-2" id="vuePersonal">
-                    <form action="">
-                        <div class="form-group row">
-                            <label for="slcPerson" class="col-sm-3 col-form-label lb-sm font-weight-bold">DNI</label>
-                            <div class="col-sm-9">
-                                <input type="text" v-model='person.dni' class="form-control form-control-sm" v-on:keyup.enter="listLaboral('dni')">
+            <div class="card-body h-100">
+                <div class="row" id="vuePersonal">
+                    <div class="col-md-3">
+                        <fieldset>
+                            <legend>Datos de la Persona</legend>
+                            <div class="form-group row">
+                                <label for="slcPerson" class="col-sm-3 col-form-label lb-sm font-weight-bold">DNI</label>
+                                <div class="col-sm-9">
+                                    <input type="text" v-model='person.dni' class="form-control form-control-sm" v-on:keyup.enter="listLaboral('')">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="slcPerson" class="col-sm-3 col-form-label lb-sm font-weight-bold">NOMBRES</label>
+                                <div class="col-sm-9">
+                                    <input type="text" v-model='person.name' class="form-control form-control-sm"  v-on:keyup.enter="listPersonas('name')">
+                                </div>
+                            </div>
+                            <div class="form-group row" style="max-height: 300px; overflow:auto;" id="scroll-style">
+                                <table class="table table-sm mx-3">
+                                    <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>DNI</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr v-for="persona in personas">
+                                        <td>
+                                            ${persona.fullname}
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm" v-on:click="listLaboral(persona.dni)">
+                                                ${persona.dni}
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card">
+                            <h3 class="loading" v-if="loading===true">Cargando&#8230;</h3>
+                            <div id="result" v-html="result">
+                                
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="slcPerson" class="col-sm-3 col-form-label lb-sm font-weight-bold">NOMBRES</label>
-                            <div class="col-sm-9">
-                                <input type="text" v-model='person.name' class="form-control form-control-sm"  v-on:click="listLaboral('name')">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="card">
-                    <div id="result">
-
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Portfolio Item Row -->
+
         <!-- /.row -->
 
     </div>
@@ -54,23 +75,44 @@
             el: '#vuePersonal',
             delimiters: ['${','}'],
             data: {
+                loading: false,
                 laboral: [],
-                person: {'dni': null, 'name': null}
+                result: '',
+                person: {'dni': null, 'name': null},
+                personas: []
             },
             methods: {
                 listLaboral: function (by) {
+                    this.loading = true;
+                    if(by != ''){
+                        this.person.dni = by;
+                    }
 
-                    let value;
                     let url = 'personal/show/' + this.person.dni;
 
                     axios.get(url)
                         .then(response => {
-                            console.log(response.data);
-                            this.release = response.data.publicaciones;
+                            this.loading = false;
+                            this.result = response.data;
                         })
                         .catch(err => {
+                            this.loading = false;
                             console.log(err);
                         });
+                },
+
+                listPersonas: function(by){
+                    this.loading = true;
+                    let url = 'personal/list/' + this.person.name;
+
+                    axios.get(url)
+                    .then(response => {
+                        this.loading = false;
+                        this.personas = response.data.personas;
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    })
                 },
 
                 addRelease: function (){
