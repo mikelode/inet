@@ -54,12 +54,12 @@ class personalController extends Controller
                 $historial = DB::connection('planillas')->select(DB::raw("select e.COD_PROYECTO, e.DES_PROYECTO, d.COD_PLANILLA, d.DES_PLANILLA, a.COD_PERSONA, 
                 c.NOMBRES, c.AP_PATERNO, c.AP_MATERNO, b.DES_CONCEPTO, a.IMPORTE, d.COD_PERIODO, g.DESCRIPCION	
                 from PLAN_PERSONA_CONCEPTOS a
-                inner join PLAN_CONCEPTO b on b.COD_CONCEPTO = a.COD_CONCEPTO
-                inner join PLAN_PERSONA c on c.COD_PERSONA = a.COD_PERSONA
+                left join PLAN_CONCEPTO b on b.COD_CONCEPTO = a.COD_CONCEPTO
+                left join PLAN_PERSONA c on c.COD_PERSONA = a.COD_PERSONA
                 left join PLAN_PERSONA_ATRIBUTO f on f.COD_PERSONA = c.COD_PERSONA and f.COD_ATRIBUTO = 'CARGO'
-                inner join PLAN_Clasificador_Detalle g on g.CODIGO = f.VALOR and g.Id_Clasificador = 'CARGO'
-                inner join PLAN_PLANILLA d on d.COD_PLANILLA = a.COD_PLANILLA
-                inner join PLAN_PROYECTO e on e.COD_PROYECTO = d.COD_PROYECTO
+                left join PLAN_Clasificador_Detalle g on g.CODIGO = f.VALOR and g.Id_Clasificador = 'CARGO'
+                left join PLAN_PLANILLA d on d.COD_PLANILLA = a.COD_PLANILLA
+                left join PLAN_PROYECTO e on e.COD_PROYECTO = d.COD_PROYECTO
                 where a.COD_CONCEPTO IN ('TLIQUIDO')  AND a.COD_PERSONA = ? 
                 ORDER BY d.COD_PERIODO ASC"), [trim($id)]);
 
