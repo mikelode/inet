@@ -19,6 +19,18 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="slcPerson" class="col-sm-3 col-form-label lb-sm font-weight-bold">AÑO</label>
+                                <div class="col-sm-9">
+                                    <select v-model='person.anio' class="form-control form-control-sm">
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="slcPerson" class="col-sm-3 col-form-label lb-sm font-weight-bold">NOMBRES</label>
                                 <div class="col-sm-9">
                                     <input type="text" v-model='person.name' class="form-control form-control-sm"  v-on:keyup.enter="listPersonas('name')">
@@ -78,7 +90,7 @@
                 loading: false,
                 laboral: [],
                 result: '',
-                person: {'dni': null, 'name': null},
+                person: {'dni': null, 'name': null, 'anio':2018},
                 personas: []
             },
             methods: {
@@ -88,7 +100,7 @@
                         this.person.dni = by;
                     }
 
-                    let url = 'personal/show/' + this.person.dni;
+                    let url = 'personal/show/' + this.person.dni + '/' + this.person.anio;
 
                     axios.get(url)
                         .then(response => {
@@ -103,7 +115,7 @@
 
                 listPersonas: function(by){
                     this.loading = true;
-                    let url = 'personal/list/' + this.person.name;
+                    let url = 'personal/list/' + this.person.name + '/' + this.person.anio;
 
                     axios.get(url)
                     .then(response => {

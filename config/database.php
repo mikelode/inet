@@ -67,13 +67,57 @@ return [
             'sslmode' => 'prefer',
         ],
 
-        'planillas' => [
+        'planillas2019' => [
             'driver' => 'sqlsrv',
-            'host' => env('PLA_HOST', 'localhost'),
-            'port' => env('PLA_PORT', '1433'),
-            'database' => env('PLA_DATABASE', 'forge'),
-            'username' => env('PLA_USERNAME', 'forge'),
-            'password' => env('PLA_PASSWORD', ''),
+            'host' => env('PLA9_HOST', 'localhost'),
+            'port' => env('PLA9_PORT', '1433'),
+            'database' => env('PLA9_DATABASE', 'forge'),
+            'username' => env('PLA9_USERNAME', 'forge'),
+            'password' => env('PLA9_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+        ],
+
+        'planillas2018' => [
+            'driver' => 'sqlsrv',
+            'host' => env('PLA8_HOST', 'localhost'),
+            'port' => env('PLA8_PORT', '1433'),
+            'database' => env('PLA8_DATABASE', 'forge'),
+            'username' => env('PLA8_USERNAME', 'forge'),
+            'password' => env('PLA8_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+        ],
+
+        'planillas2017' => [
+            'driver' => 'sqlsrv',
+            'host' => env('PLA7_HOST', 'localhost'),
+            'port' => env('PLA7_PORT', '1433'),
+            'database' => env('PLA7_DATABASE', 'forge'),
+            'username' => env('PLA7_USERNAME', 'forge'),
+            'password' => env('PLA7_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+        ],
+
+        'planillas2016' => [
+            'driver' => 'sqlsrv',
+            'host' => env('PLA6_HOST', 'localhost'),
+            'port' => env('PLA6_PORT', '1433'),
+            'database' => env('PLA6_DATABASE', 'forge'),
+            'username' => env('PLA6_USERNAME', 'forge'),
+            'password' => env('PLA6_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+        ],
+
+        'planillas2015' => [
+            'driver' => 'sqlsrv',
+            'host' => env('PLA5_HOST', 'localhost'),
+            'port' => env('PLA5_PORT', '1433'),
+            'database' => env('PLA5_DATABASE', 'forge'),
+            'username' => env('PLA5_USERNAME', 'forge'),
+            'password' => env('PLA5_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
         ],
