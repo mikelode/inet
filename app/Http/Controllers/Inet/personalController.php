@@ -86,9 +86,9 @@ class personalController extends Controller
 
     public function list($name)
     {
-        $personas = DB::connection('planillas')->select(DB::raw("select COD_PERSONA as dni, CONCAT(NOMBRES, ' ', AP_PATERNO, ' ', AP_MATERNO) AS fullname 
+        $personas = DB::connection('planillas')->select(DB::raw("select COD_PERSONA as dni, (NOMBRES + ' ' + AP_PATERNO + ' ' + AP_MATERNO) AS fullname 
         from PLAN_PERSONA
-        where CONCAT(NOMBRES, ' ', AP_PATERNO, ' ', AP_MATERNO) like ?"), ['%' . trim($name) . '%']);
+        where (NOMBRES + ' ' + AP_PATERNO + ' ' + AP_MATERNO) like ?"), ['%' . trim($name) . '%']);
 
         return response()->json(compact('personas'));
     }
