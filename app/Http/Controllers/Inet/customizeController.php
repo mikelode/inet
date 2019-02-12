@@ -457,7 +457,7 @@ class customizeController extends Controller
                 $user = new User();
                 $user->name = $request->ntxtUsrname;
                 $user->email = $request->ntxtUsrmail;
-                $user->password = encrypt($request->ntxtDni);
+                $user->password = bcrypt($request->ntxtDni);
                 $user->created_at = Carbon::now();
                 $user->person = $usrPerson->perId;
                 $user->save();
