@@ -499,4 +499,21 @@ class customizeController extends Controller
 
         return 'Campo actualizado correctamente';
     }
+
+    public function resetUsuario($id)
+    {
+        try{
+            $persona = User::find($id)->persona;
+            $usuario = User::find($id);
+            $usuario->password = bcrypt($persona->perDni);
+            $usuario->save();
+
+            $msg = 'Clave reseteada';
+
+        }catch(Exception $e){
+            $msg = "Error: " . $e->getMessage();
+        }
+        
+        return response()->json(compact('msg'));
+    }
 }

@@ -20,6 +20,7 @@ Route::post('directorio/encontrar','inet\directoryController@filter');
 
 Route::post('usuario/store','inet\customizeController@storeUsuario');
 Route::post('usuario/update','inet\customizeController@updateUsuario');
+Route::get('usuario/resetclave/{id}','inet\customizeController@resetUsuario');
 
 Route::post('persona/store','inet\customizeController@storePersona');
 Route::post('persona/update','inet\customizeController@updatePersona');

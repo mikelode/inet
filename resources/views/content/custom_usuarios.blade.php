@@ -27,6 +27,7 @@
                         <th>Email</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
+                        <td>RESET</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -44,6 +45,9 @@
                             </td>
                             <td>
                                 <a href="#"><img src="{{ asset('/img/delete24.png') }}" alt=""></a>
+                            </td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" onclick="resetClave({{ $usu->id }})">Clave</button>
                             </td>
                         </tr>
                     @endforeach
@@ -127,5 +131,17 @@
                 alert(response);
             }
         });
+
+        function resetClave(id){
+
+            var ok = confirm('¿Está seguro de reseter la clave del usuario?');
+
+            if(!ok) return;
+
+            $.get('../usuario/resetclave/' + id, function(response){
+                alert(response.msg);
+            });
+
+        }
     </script>
 @endsection
