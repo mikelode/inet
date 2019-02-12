@@ -73,7 +73,7 @@ class releaseController extends Controller
                 $publicacion->pubDescripcion = $frm->relDesc;
                 $publicacion->pubPathfile = $pathFile;
                 $publicacion->pubFecha = Carbon::now();
-                $publicacion->pubAutor = Auth::user()->id;
+                $publicacion->pubAutor = is_null(Auth::user()->persona) ? Auth::user()->id : Auth::user()->persona->perId;
                 $publicacion->pubVisible = $frm->relShow;
                 $publicacion->pubTitulo = $frm->relTitle;
 
