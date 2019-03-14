@@ -4,7 +4,7 @@
 <script src="{{ asset('/plugins/fullcalendar-3.9.0/fullcalendar.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/plugins/fullcalendar-3.9.0/locale/es-us.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/plugins/summernote/dist/popper.min.js') }}"></script>
-<script src="{{ asset('/plugins/bootstrap-4.1.0/dist/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/bootstrap.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/plugins/datatables/DataTables-1.10.16/js/jquery.dataTables.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/plugins/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/plugins/datatables/Buttons-1.5.1/js/dataTables.buttons.min.js') }}" type="text/javascript"></script>
@@ -18,8 +18,9 @@
 
 <script src="{{ asset('/plugins/slick181/slick/slick.min.js') }}" type="text/javascript"></script>
 
-<script src="{{ asset('/js/vue.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/vue.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/axios.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/vue-select.js') }}" type="text/javascript"></script>
 
 <script src="{{ asset('/js/inet.js') }}" type="text/javascript"></script>
 
@@ -29,6 +30,8 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+	Vue.component('v-select', VueSelect.VueSelect);
 
     var screen = $('#loading-screen');
 	configureLoadingScreen(screen);

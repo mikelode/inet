@@ -85,3 +85,13 @@ Route::post('comment/{release}/add','inet\releaseController@storeComment');
 Route::get('control', 'inet\personalController@index');
 Route::get('personal/show/{id}/{anio}','inet\personalController@show');
 Route::get('personal/list/{name}/{anio}','inet\personalController@list');
+
+/* PARA CONTROL DE VISITAS */
+Route::get('control/visita','control\visitaController@index');
+Route::get('visitante/show/{id}','control\visitaController@show');
+Route::post('visitante/store','control\visitaController@store');
+Route::get('visitante/reporte/{id}','control\visitaController@showReporte');
+Route::post('detalle/store','control\visitaController@storeDetalle');
+Route::get('detalle/show/{id}','control\visitaController@showDetalle');
+Route::post('detalle/update/{id}','control\visitaController@updateDetalle');
+Route::get('detalle/delete/{id}','control\visitaController@destroyDetalle');

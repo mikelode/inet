@@ -30,7 +30,9 @@
 									</a>
                                 </div>
                                 <div class="col-md-6" style="text-align: center;">
-                                    <img src="{{ asset('img/TAREOS.png') }}" alt="" width='140px' height='120px'>
+                                    <a href="http://192.168.0.9/Login" target="_blank">
+                                        <img src="{{ asset('img/TAREOS.png') }}" alt="" width='140px' height='120px'>
+                                    </a>
                                 </div>
                             </div>
                             <div class="row">

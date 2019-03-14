@@ -15,8 +15,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('/plugins/fullcalendar-3.9.0/fullcalendar.min.css') }}" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('plugins/bootstrap-4.1.0/dist/css/bootstrap.min.css') }}" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/portfolio-item.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/plugins/fontawesome-5.0.7/css/fontawesome-all.min.css') }}" type="text/css" />
